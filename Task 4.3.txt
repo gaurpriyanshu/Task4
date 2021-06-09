@@ -1,0 +1,15 @@
+import cv2, numpy
+photo1 = cv2.imread('Maru.jpg')
+cv2.imshow('Image_1', photo1)
+cv2.waitKey()
+cv2.destroyAllWindows() 
+photo2 = cv2.imread('Bandya.jpg')
+cv2.imshow('Image_2', photo2)
+cv2.waitKey()
+cv2.destroyAllWindows() 
+cropped1=photo1[0:120,75:195]
+cropped2=photo2[0:120,0:120]
+collage= numpy.concatenate((cropped1,cropped2))
+cv2.imshow('Collage', collage)
+cv2.waitKey()
+cv2.destroyAllWindows() 

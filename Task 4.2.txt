@@ -1,0 +1,28 @@
+import cv2
+photo1 = cv2.imread('Maru.jpg')   #Reading First Image
+pic1 = photo1
+cv2.imshow('Image_1', photo1)     #Showing First Image using python code
+cv2.waitKey()
+cv2.destroyAllWindows() 
+photo2 = cv2.imread('Bandya.jpg')  #Reading Second Image
+pic2 = photo2
+cv2.imshow('Image_2', photo2)     #Showing Second Image 
+cv2.waitKey()
+cv2.destroyAllWindows() 
+cropped2=pic2[0:120,0:120]     #Taking a section of Second Image
+cv2.imshow('Crop_2', cropped2) #Showing that section of cropped part of Image_2
+cv2.waitKey()
+cv2.destroyAllWindows() 
+pic1[20:140,60:180] = cropped2  #Replacing it with the section of same size in First Image_1 
+cv2.imshow('Pic_1', pic1)       #Displaying final Image_1
+cv2.waitKey()
+cv2.destroyAllWindows() 
+photo1 = cv2.imread('Maru.jpg')   #Reading the Image_1 again as the previous image contains the cropped part also
+cropped1=photo1[0:120,75:195]     #Taking a section of First Image
+cv2.imshow('Crop_1', cropped1)    #Showing that section of cropped part of Image_1
+cv2.waitKey()
+cv2.destroyAllWindows() 
+photo2[0:120,45:165]= cropped1    #Replacing it with the section of same size in First Image_2 
+cv2.imshow('Pic_2', photo2)       #Displaying final Image_2
+cv2.waitKey()
+cv2.destroyAllWindows()
